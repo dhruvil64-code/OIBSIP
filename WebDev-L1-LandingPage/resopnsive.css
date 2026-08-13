@@ -1,0 +1,450 @@
+@media screen and (max-width:768px){
+
+
+
+header{
+    height:auto;
+    padding:15px 0;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+.logo img{
+    width:180px;
+    height:auto;
+}
+
+.box ul{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.button{
+    width:160px;
+}
+
+
+
+.hero{
+    flex-direction:column;
+    height:auto;
+    padding:25px 15px;
+    text-align:center;
+}
+
+.hero-text{
+    padding:10px;
+    align-items:center;
+}
+
+.ab{
+    font-size:30px;
+}
+
+.bc{
+    font-size:38px;
+    line-height:1.2;
+}
+
+.cd{
+    font-size:24px;
+}
+
+.de{
+    font-size:15px;
+}
+
+.ef{
+    flex-direction:column;
+    gap:15px;
+    width:100%;
+    align-items:center;
+}
+
+.fg,
+.gh{
+    width:220px;
+    height:45px;
+}
+
+.hero-img{
+    position:static;
+    width:100%;
+    margin-top:30px;
+}
+
+.hero-img img,
+.hero img{
+    width:100%;
+    height:auto;
+}
+
+
+
+.history{
+    margin:20px;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.hist1,
+.hist2,
+.hist3,
+.hist4{
+    flex-direction:column;
+    text-align:center;
+}
+
+.ha1 img,
+.ha2 img,
+.ha3 img,
+.ha4 img{
+    width:120px;
+    height:auto;
+}
+
+
+
+.product-card{
+    height:auto;
+    margin:20px;
+}
+
+.product{
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.proab,
+.proqw,
+.prowe,
+.proer,
+.prort{
+    width:100%;
+    height:auto;
+    padding:20px;
+}
+
+.proab img,
+.proqw img,
+.prowe img,
+.proer img,
+.prort img{
+    width:150px;
+    height:150px;
+}
+
+.procd{
+    width:170px;
+    height:40px;
+}
+
+}
+/* ===========================
+   RESPONSIVE - PART 2
+   About + Process + Feature Cards
+=========================== */
+
+@media screen and (max-width:768px){
+
+/* FEATURE CARDS */
+
+.card{
+    margin:20px;
+    grid-template-columns:1fr;
+    gap:20px;
+    padding:20px;
+}
+
+.card1,
+.card2,
+.card3,
+.card4{
+    flex-direction:column;
+    text-align:center;
+    gap:12px;
+}
+
+.card img{
+    width:90px;
+    height:90px;
+}
+
+/* MANUFACTURING PROCESS */
+
+.process{
+    margin:20px;
+    padding:20px;
+}
+
+.process1{
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.roa,
+.roc,
+.rod,
+.roe{
+    text-align:center;
+    padding:15px;
+}
+
+/* ABOUT */
+
+.about{
+    margin:20px;
+    grid-template-columns:1fr;
+    gap:25px;
+    padding:20px;
+}
+
+.a1{
+    order:2;
+    text-align:center;
+}
+
+.a2 ul{
+    padding-left:0;
+}
+
+.a2 ul li{
+    justify-content:center;
+    text-align:center;
+}
+
+.a3{
+    position:static;
+    order:1;
+    display:flex;
+    justify-content:center;
+}
+
+.a3 img{
+    width:100%;
+    max-width:320px;
+    height:auto;
+}
+
+/* SECTION SPACING */
+
+.product-card,
+.process,
+.about,
+.card{
+    border-radius:15px;
+}
+
+/* HEADINGS */
+
+.Pro-name,
+.na,
+.a1 h3{
+    font-size:24px;
+}
+
+/* PARAGRAPH */
+
+.a1 p{
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* READ MORE BUTTON */
+
+.a1 .button{
+    margin:auto;
+    margin-top:20px;
+}
+
+}
+/* ===========================
+   RESPONSIVE - PART 3
+   Review + Footer + Final Fix
+=========================== */
+
+@media screen and (max-width:768px){
+
+/* REVIEW */
+
+.review{
+    margin:20px;
+    padding:20px;
+}
+
+.ra1,
+.ra2,
+.ra3{
+    width:100%;
+    height:auto;
+    margin:20px 0;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:20px;
+}
+
+.quote{
+    position:static;
+    margin-bottom:10px;
+}
+
+.rab1 img,
+.rab2 img,
+.rab3 img{
+    width:120px;
+    height:120px;
+    margin:0;
+}
+
+.rba1,
+.rba2,
+.rba3,
+.rbb1,
+.rbb2,
+.rbb3,
+.rbc1,
+.rbc2,
+.rbc3,
+.rbd1,
+.rbd2,
+.rbd3{
+    margin:0;
+}
+
+.rba1,
+.rba2,
+.rba3{
+    font-size:18px;
+}
+
+.rbb1,
+.rbb2,
+.rbb3{
+    font-size:15px;
+    line-height:1.7;
+}
+
+.rbc1,
+.rbc2,
+.rbc3{
+    margin-top:10px;
+    color:#faba17;
+}
+
+/* FOOTER */
+
+.foot{
+    grid-template-columns:1fr;
+    gap:30px;
+    text-align:center;
+}
+
+.footer1,
+.footer2,
+.footer3,
+.footer4,
+.footer5{
+    align-items:center;
+}
+
+.footerimg img{
+    width:220px;
+    height:auto;
+}
+
+.footer-text{
+    font-size:15px;
+}
+
+.foot-img{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.foot1-text,
+.foot2-text,
+.foot3-text,
+.foot4-text{
+    align-items:center;
+}
+
+.phone,
+.email,
+.location,
+.gst{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.end{
+    flex-direction:column;
+    text-align:center;
+    padding:15px;
+}
+
+/* GLOBAL FIX */
+
+section{
+    overflow:scroll;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+    overflow-x:scroll;
+}
+
+*{
+    word-wrap:break-word;
+}
+
+}
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    color:#faba17;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.box{
+    display:none;
+    width:100%;
+}
+
+.box.active{
+    display:block;
+}
+
+.box ul{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:20px;
+    text-align:center;
+}
+
+}
