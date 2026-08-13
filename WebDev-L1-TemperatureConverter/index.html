@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="A modern temperature converter for Celsius, Fahrenheit and Kelvin.">
+
+    <title>TempConvert | Temperature Converter</title>
+
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7005/7005008.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">°</span>
+                <span class="logo-text">Temp<span>Convert</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#converter">Converter</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="hero" id="home">
+
+            <div class="hero-circle circle-one"></div>
+            <div class="hero-circle circle-two"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-badge">
+                    <span></span>
+                    SMART TEMPERATURE TOOL
+                </div>
+
+                <h1>
+                    Temperature
+                    <span>Converter</span>
+                </h1>
+
+                <p>
+                    Convert temperatures instantly between
+                    Celsius, Fahrenheit and Kelvin.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="converter-section" id="converter">
+
+            <div class="container">
+
+                <div class="converter-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <p class="section-label">QUICK CONVERSION</p>
+
+                            <h2>
+                                Convert Your Temperature
+                            </h2>
+
+                            <p class="card-description">
+                                Enter a temperature and select its unit
+                                to get instant results.
+                            </p>
+                        </div>
+
+                        <div class="temperature-icon">
+                            🌡️
+                        </div>
+
+                    </div>
+
+
+                    <form id="converterForm">
+
+
+                        <div class="form-group">
+
+                            <label for="temperature">
+                                Enter Temperature
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="temperature"
+                                    name="temperature"
+                                    placeholder="Enter value..."
+                                    step="any"
+                                    autocomplete="off"
+                                >
+
+                                <span class="input-symbol">
+                                    °
+                                </span>
+
+                            </div>
+
+
+                            <p class="error-message" id="errorMessage"></p>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="inputUnit">
+                                Input Unit
+                            </label>
+
+                            <select id="inputUnit" name="inputUnit">
+
+                                <option value="celsius">
+                                    Celsius (°C)
+                                </option>
+
+                                <option value="fahrenheit">
+                                    Fahrenheit (°F)
+                                </option>
+
+                                <option value="kelvin">
+                                    Kelvin (K)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="convert-btn"
+                            id="convertBtn"
+                        >
+
+                            <span>Convert Temperature</span>
+
+                            <span class="arrow">→</span>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="results-section" id="resultsSection">
+
+                    <div class="results-heading">
+
+                        <div>
+                            <p class="section-label">
+                                CONVERSION RESULTS
+                            </p>
+
+                            <h2>
+                                Your Results
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="results-grid">
+
+                        <div class="result-card">
+
+                            <div class="result-icon">
+                                °C
+                            </div>
+
+                            <div class="result-info">
+
+                                <p class="result-unit">
+                                    Celsius
+                                </p>
+
+                                <h3 id="celsiusResult">
+                                    --.-- °C
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="result-card">
+
+                            <div class="result-icon">
+                                °F
+                            </div>
+
+                            <div class="result-info">
+
+                                <p class="result-unit">
+                                    Fahrenheit
+                                </p>
+
+                                <h3 id="fahrenheitResult">
+                                    --.-- °F
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="result-card">
+
+                            <div class="result-icon">
+                                K
+                            </div>
+
+                            <div class="result-info">
+
+                                <p class="result-unit">
+                                    Kelvin
+                                </p>
+
+                                <h3 id="kelvinResult">
+                                    --.-- K
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="about-section" id="about">
+
+            <div class="container about-content">
+
+                <p class="section-label">
+                    ABOUT THE TOOL
+                </p>
+
+                <h2>
+                    Simple. Fast. Accurate.
+                </h2>
+
+                <p>
+                    TempConvert is a simple and modern temperature
+                    conversion tool that helps you convert values
+                    between Celsius, Fahrenheit and Kelvin.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-logo">
+                Temp<span>Convert</span>
+            </div>
+
+            <p>
+                © 2026 TempConvert. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1100 @@
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
+
+:root {
+    --primary-green: #0f372f;
+    --secondary-green: #164e43;
+    --light-green: #e8f3ef;
+    --soft-green: #f4faf8;
+
+    --white: #ffffff;
+    --dark-text: #12201c;
+    --muted-text: #66736f;
+
+    --border-color: #dce8e4;
+    --error-color: #d64545;
+
+    --shadow-sm:
+        0 6px 20px rgba(15, 55, 47, 0.08);
+
+    --shadow-md:
+        0 10px 30px rgba(15, 55, 47, 0.12);
+
+    --shadow-lg:
+        0 18px 45px rgba(15, 55, 47, 0.16);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================
+   2. RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--soft-green);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   3. COMMON CONTAINER
+========================================= */
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   4. HEADER
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(15, 55, 47, 0.08);
+}
+
+.nav-container {
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    color: var(--primary-green);
+}
+
+.logo span span {
+    color: var(--secondary-green);
+}
+
+
+/* Logo Icon */
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-green);
+    color: var(--white);
+
+    border-radius: 11px;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* Navigation */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav-menu a {
+    position: relative;
+
+    color: var(--muted-text);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-green);
+}
+
+.nav-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary-green);
+
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* Mobile Menu Button */
+
+.menu-btn {
+    display: none;
+
+    border: none;
+    background: var(--light-green);
+
+    color: var(--primary-green);
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(15, 55, 47, 0.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(22, 78, 67, 0.14),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f7fcfa,
+            #e8f3ef
+        );
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    animation: heroAppear 0.8s ease forwards;
+}
+
+
+/* Badge */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 22px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid rgba(15, 55, 47, 0.1);
+
+    border-radius: 50px;
+
+    color: var(--primary-green);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+
+    box-shadow: 10px 10px 20px rgba(144, 238, 144, 0.5);
+}
+
+.hero-badge span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--secondary-green);
+}
+
+
+/* Hero Heading */
+
+.hero h1 {
+    max-width: 800px;
+
+    font-size: clamp(42px, 7vw, 76px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+
+    color: var(--primary-green);
+
+    margin-bottom: 22px;
+
+    text-shadow: 10px 10px 20px rgba(144, 238, 144, 0.5);
+
+    animation: move 0.8s ease 1s infinite alternate;
+
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(200px);
+    }
+}
+
+.hero h1 span {
+    color: var(--secondary-green);
+}
+
+
+/* Hero Paragraph */
+
+.hero p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: var(--muted-text);
+
+    font-size: 17px;
+}
+
+
+/* Decorative Circles */
+
+.hero-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 240px;
+    height: 240px;
+
+    right: -90px;
+    bottom: -80px;
+
+    background: rgba(15, 55, 47, 0.08);
+}
+
+.circle-two {
+    width: 170px;
+    height: 170px;
+
+    left: -70px;
+    top: 80px;
+
+    background: rgba(22, 78, 67, 0.08);
+}
+
+
+/* =========================================
+   6. CONVERTER SECTION
+========================================= */
+
+.converter-section {
+    padding: 80px 0;
+}
+
+
+/* Converter Card */
+
+.converter-card {
+    position: relative;
+
+    background: var(--white);
+
+    padding: 42px;
+
+    border-radius: var(--radius-lg);
+
+    border: 1px solid rgba(15, 55, 47, 0.08);
+
+    box-shadow: 10px 10px 20px rgba(144, 238, 144, 0.5);
+
+    animation: cardAppear 0.8s ease forwards;
+}
+
+
+/* Card Heading */
+
+.card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.section-label {
+    margin-bottom: 7px;
+
+    color: var(--secondary-green);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.card-heading h2,
+.results-heading h2,
+.about-content h2 {
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    color: var(--primary-green);
+}
+
+.card-description {
+    margin-top: 10px;
+
+    color: var(--muted-text);
+
+    font-size: 14px;
+}
+
+
+/* Temperature Icon */
+
+.temperature-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--light-green);
+
+    border-radius: 16px;
+
+    font-size: 27px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================
+   7. FORM
+========================================= */
+
+form {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 9px;
+
+    color: var(--dark-text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Input */
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+
+    height: 56px;
+
+    padding: 0 50px 0 17px;
+
+    border: 1.5px solid var(--border-color);
+
+    border-radius: var(--radius-sm);
+
+    outline: none;
+
+    background: var(--white);
+
+    color: var(--dark-text);
+
+    font-size: 16px;
+
+    transition: var(--transition);
+}
+
+.input-wrapper input::placeholder {
+    color: #9aa8a4;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--secondary-green);
+
+    box-shadow:
+        0 0 0 4px rgba(15, 55, 47, 0.08);
+}
+
+
+/* Degree Symbol */
+
+.input-symbol {
+    position: absolute;
+
+    right: 17px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--muted-text);
+
+    font-size: 18px;
+    font-weight: 600;
+
+    pointer-events: none;
+}
+
+
+/* Select */
+
+.form-group select {
+    width: 100%;
+
+    height: 56px;
+
+    padding: 0 17px;
+
+    border: 1.5px solid var(--border-color);
+
+    border-radius: var(--radius-sm);
+
+    outline: none;
+
+    background: var(--white);
+
+    color: var(--dark-text);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.form-group select:focus {
+    border-color: var(--secondary-green);
+
+    box-shadow:
+        0 0 0 4px rgba(15, 55, 47, 0.08);
+}
+
+
+/* Error Message */
+
+.error-message {
+    min-height: 22px;
+
+    margin-top: 7px;
+
+    color: var(--error-color);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   8. CONVERT BUTTON
+========================================= */
+
+.convert-btn {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(15, 55, 47, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.convert-btn:hover {
+    background: var(--secondary-green);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(15, 55, 47, 0.25);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+.arrow {
+    font-size: 21px;
+
+    transition: transform 0.25s ease;
+}
+
+.convert-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   9. RESULTS
+========================================= */
+
+.results-section {
+    padding-top: 70px;
+}
+
+.results-heading {
+    margin-bottom: 25px;
+}
+
+
+/* Result Grid */
+
+.results-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Result Card */
+
+.result-card {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(15, 55, 47, 0.08);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: 10px 10px 20px rgba(144, 238, 144, 0.5);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(15, 55, 47, 0.18);
+}
+
+
+/* Result Icon */
+
+.result-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--light-green);
+
+    color: var(--primary-green);
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* Result Text */
+
+.result-unit {
+    margin-bottom: 3px;
+
+    color: var(--muted-text);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.result-info h3 {
+    color: var(--primary-green);
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   10. ABOUT SECTION
+========================================= */
+
+.about-section {
+    padding: 80px 0;
+
+    background: var(--primary-green);
+
+    color: var(--white);
+}
+
+.about-content {
+    max-width: 750px;
+
+    text-align: center;
+}
+
+.about-content .section-label {
+    color: #a8d4c8;
+}
+
+.about-content h2 {
+    color: var(--white);
+
+    margin-bottom: 18px;
+}
+
+.about-content > p:last-child {
+    color: #c4d6d1;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.footer {
+    background: #092b25;
+
+    color: #b9cbc6;
+
+    padding: 28px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 12px;
+}
+
+.footer-logo {
+    color: var(--white);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.footer-logo span {
+    color: #9bcabd;
+}
+
+
+/* =========================================
+   12. ANIMATIONS
+========================================= */
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   13. TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .results-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .result-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .converter-card {
+        padding: 32px;
+    }
+
+}
+
+
+/* =========================================
+   14. MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(92%, 560px);
+    }
+
+
+    /* Header */
+
+    .nav-container {
+        height: 70px;
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 10px 5% 20px;
+
+        background: var(--white);
+
+        border-bottom: 1px solid var(--border-color);
+
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid #edf2f0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 380px;
+
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+
+    /* Converter */
+
+    .converter-section {
+        padding: 55px 0;
+    }
+
+    .converter-card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    .card-heading {
+        margin-bottom: 28px;
+    }
+
+    .card-heading h2,
+    .results-heading h2,
+    .about-content h2 {
+        font-size: 25px;
+    }
+
+    .temperature-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 22px;
+    }
+
+
+    /* Form */
+
+    form {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .convert-btn {
+        grid-column: auto;
+
+        margin-top: 4px;
+    }
+
+
+    /* Results */
+
+    .results-section {
+        padding-top: 50px;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .result-card:last-child {
+        grid-column: auto;
+    }
+
+
+    /* About */
+
+    .about-section {
+        padding: 60px 0;
+    }
+
+
+    /* Footer */
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================
+   15. SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+
+        font-size: 20px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero-badge {
+        font-size: 9px;
+    }
+
+    .converter-card {
+        padding: 22px 16px;
+    }
+
+    .result-card {
+        padding: 20px;
+    }
+
+}
+
+
+.reset-btn {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    color: #6c7185;
+
+    font-size: 15px;
+}
+
+.reset-btn:hover {
+    color: var(--primary);
+
+    border-color: #c7c9ff;
+
+    transform: rotate(-8deg);
+}
